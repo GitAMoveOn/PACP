@@ -966,7 +966,7 @@ accuracy( bc.test$target, bc.test$res.no.reg )</code></pre>
 <pre><code>## [1] 0.9026549</code></pre>
 <pre class="r"><code>accuracy( bc.test$target, bc.test$res.lam.10 )</code></pre>
 <pre><code>## [1] 0.7876106</code></pre>
-<p>Interesting that the non-regularized model is pretty accurate. As lambda decrease, accuracy goes down. Makes sense because we keep ‘removing’ more variables as lambda increases.</p>
+<p>Interesting that the non-regularized model is pretty accurate. As lambda increases, accuracy goes down. Makes sense because we keep ‘removing’ more variables as lambda increases.</p>
 <p>For another point of view, here’s a cross-validation plot on the training data, based on the four lambdas.</p>
 <pre class="r"><code>cvfit = cv.glmnet(X, y = bc.train$target, family = &quot;binomial&quot;, type.measure = &quot;class&quot;, lambda = lambdas) 
 plot(cvfit)</code></pre>

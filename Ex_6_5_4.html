@@ -145,6 +145,10 @@ library(pROC)
 thresh_1 = 0.5</code></pre>
 <div id="prep-data" class="section level5">
 <h5>Prep Data</h5>
+<p>For the prescribed target variable I created a factor variable named ‘<code>is_claimant</code>’ for which:<br />
+- <code>actual_cnt</code> == 0 -&gt; ‘0’<br />
+- <code>actual_cnt</code> &gt; 0 -&gt; ‘1’</p>
+<p>For variables to include in the modeling, I removed any that were collinear with the target in a non-meaningful way; e.g. it’s not useful to know that <code>actual_cnt</code> will be split on, since we used it to define our target.</p>
 <pre class="r"><code># Import csv mort_raw &lt;- read.csv(
 # 'D:/Dropbox/PACP/data/soa_mortality_data.csv' )
 mort_raw &lt;- read.csv(&quot;/users/werlindo/Dropbox/PACP/data/soa_mortality_data.csv&quot;)
